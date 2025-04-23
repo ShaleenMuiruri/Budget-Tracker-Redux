@@ -1,4 +1,4 @@
-# Redux Data Flow in Next.js Application
+# Budget Tracker using Redux 
 
 ## Overview
 
@@ -26,7 +26,7 @@ app/
 The data flows through the application in the following sequence:
 
 1. **Redux Store Initialization**
-   - `reducer.ts` defines the initial state e.g `transactions: [{id: 1}]`
+   - `reducer.ts` defines the initial state
    - `store.ts` configures the Redux store with the reducer and Redux Persist
 
 2. **Provider Integration**
@@ -66,9 +66,3 @@ The data flows through the application in the following sequence:
 
 3. Open the application in your browser
 
-
-## Notes
-
-- The application uses Next.js 13+ App Router pattern
-- Redux state is persisted using redux-persist
-- Components using Redux must be wrapped with 'use client' directive
