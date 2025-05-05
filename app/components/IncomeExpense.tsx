@@ -1,13 +1,14 @@
 import React from 'react'
+import { Transaction as TransactionType } from '../redux/types';
 
-const IncomeExpense = ({transactions}: {transactions: any}) => {
-    const amount = transactions.map((transaction: any) => Number(transaction.amount));
+const IncomeExpense = ({transactions}: {transactions: TransactionType[]}) => {
+    const amount = transactions.map((transaction: TransactionType) => Number(transaction.amount));
     const income = amount
-      .filter((item: any) => item > 0)
-      .reduce((acc: any, item: any) => acc + item, 0);
+      .filter((item: number) => item > 0)
+      .reduce((acc: number, item: number) => acc + item, 0);
     const expenses = amount
-      .filter((item: any) => item < 0)
-      .reduce((acc: any, item: any) => acc + item, 0);
+      .filter((item: number) => item < 0)
+      .reduce((acc: number, item: number) => acc + item, 0);
     return (
       <div className="inc-exp-container">
         <div>

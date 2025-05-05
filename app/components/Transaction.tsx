@@ -1,7 +1,8 @@
 import React from 'react'
+import { Transaction as TransactionType } from '../redux/types';
 
-const Transaction = ({ transaction, deleteTransaction }: { transaction: any, deleteTransaction: any }) => {
-    let sign = transaction.amount >= 0 ? "+" : "-";
+const Transaction = ({ transaction, deleteTransaction }: { transaction: TransactionType, deleteTransaction: (id: string | number) => void }) => {
+    const sign = transaction.amount >= 0 ? "+" : "-";
 
     return (
         <li className={transaction.amount >= 0 ? "plus" : "minus"}>

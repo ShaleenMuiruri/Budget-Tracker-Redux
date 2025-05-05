@@ -1,9 +1,10 @@
 import React from "react";
+import { Transaction as TransactionType } from '../redux/types';
 
-export const Balance = ({ transactions }: { transactions: any }) => {
+export const Balance = ({ transactions }: { transactions: TransactionType[] }) => {
 
   const amount = transactions.map(
-    (transaction: any) => transaction.amount
+    (transaction: TransactionType) => transaction.amount
   );
 
   const total = amount.reduce((acc: number, item: number) => acc + item, 0);

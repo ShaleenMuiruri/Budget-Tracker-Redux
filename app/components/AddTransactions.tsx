@@ -10,7 +10,7 @@ export const AddTransactions: React.FC<AddTransactionsProps> = ({ addTransaction
     const [text, setText] = useState("");
     const [amount, setAmount] = useState(0)
     const [date, setDate] = useState("")
-    const onSubmit = (event: any) => {
+    const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         const newTransaction = {
             id: id,
